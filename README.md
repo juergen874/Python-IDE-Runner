@@ -1,4 +1,4 @@
-# 🐍 Python IDE & Deye SUN-12K Modbus Monitor for Android
+# 🐍 Python IDE & Interpreter for Android
 
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-purple.svg)](https://kotlinlang.org)
@@ -6,136 +6,114 @@
 [![Python](https://img.shields.io/badge/Python-3.10%20(Chaquopy)-yellow.svg)](https://chaquo.com/chaquopy/)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
-Eine vollwertige, native **Android Python-Entwicklungsumgebung (IDE)** und **Live-Telemetrie-Monitor für Deye SUN-12K Hybrid-Wechselrichter** (`SUN-12K-SG04LP3`). 
+Eine vollwertige, native **Android Python-Entwicklungsumgebung (IDE) und Python-Interpreter**. 
 
-Angetrieben von der **Chaquopy Python 3.10 Engine**, bietet die App eine nahtlose Ausführung von Python-Skripten direkt auf dem Android-Gerät – inklusive NumPy, Matplotlib, reiner Socket-Kommunikation und interaktiver WebView-Dashboards.
+Mit der integrierten **Chaquopy Python 3.10 Engine** führt die App Python-Code nativ und offline direkt auf dem Android-Gerät aus – ganz ohne Cloud-Abhängigkeiten oder Server. Unterstützt werden numerische Berechnungen mit **NumPy**, Datenvisualisierung mit **Matplotlib**, Multithreading, Socket-Netzwerkkommunikation sowie interaktive WebViews.
 
 ---
 
-## ✨ Highlights & Features
+## ✨ Features & Funktionsumfang
 
-### 🖥️ 1. Vollbild Drei-Tab-Architektur
-Die Benutzeroberfläche nutzt das gesamte Display optimal über dedizierte Vollbild-Tabs:
+### 🖥️ 1. Vollbild Drei-Tab-Benutzeroberfläche
+Jede Hauptansicht verfügt über die volle Bildschirmhöhe und -breite:
+
 - **📝 Tab 1: Editor**
   - Vollbild-Code-Editor mit Zeilennummern und dynamischem Syntax-Highlighting.
-  - Schnelleingabeleiste mit 1-Tap-Einrückung (`Tab` / 4 Leerzeichen) sowie Programmiersymbolen (`def`, `class`, `import`, `print`, `:`, `()`, `[]`, `{}`).
-  - Statusindikator für ungespeicherte Änderungen (`●`).
+  - Quick-Access-Symbolleiste für schnelles Programmieren auf Touchscreens:
+    - `Tab`-Taste für 4-Leerzeichen-Einrückung.
+    - Schnelleingaben für häufige Python-Tokens (`def`, `class`, `import`, `print`, `:`, `()`, `[]`, `{}`).
+  - Statusanzeige für ungespeicherte Änderungen (`●`).
+
 - **💻 Tab 2: Terminal**
   - Vollbild-Streaming-Konsole für `stdout` und `stderr` in Echtzeit.
-  - ANSI-Farbdekodierung, Laufzeitmessung (ms/s), Autoscroll-Schalter und Copy-to-Clipboard.
-  - Automatischer Fokus auf das Terminal beim Starten eines Skripts.
+  - Automatische ANSI-Farbdarstellung (z. B. für formatierte Status- oder Fehlerausgaben).
+  - Ausführungszeit-Messung (ms / s).
+  - Autoscroll-Schalter, Copy-to-Clipboard und Clear-Funktion.
+  - Beim Klick auf **Run ▶** wechselt die Ansicht automatisch in das Terminal.
+
 - **🌐 Tab 3: Web / Visual View**
-  - Interaktives Rendern von generierten HTML/CSS/JavaScript-Dashboards und Matplotlib-Diagrammen.
-  - Direkte Anzeige des lokalen Deye Live-Dashboards (`http://localhost:8080`).
+  - Integrierte visuelle Ausgabe für grafische Ergebnisse:
+    - **Matplotlib Plots**: Automatisch erfasste Diagramme werden gerendert.
+    - **Web-Dashboards**: Generierte HTML/CSS/JavaScript-Dateien oder lokale HTTP-Server (z. B. `http://localhost:8080`) werden interaktiv dargestellt.
+  - Badge-Indikator, sobald neue Visualisierungen verfügbar sind.
 
 ---
 
-### ⚡ 2. Deye SUN-12K Hybrid-Wechselrichter Integration
-Enthält ein optimiertes, robustes Python-Skript (`deye_12k_inverter.py`) zur Auslesung von Deye Hybrid-Wechselrichtern über das Heimnetzwerk:
-- **Dual-Modus**:
-  - **Solarman V5 WLAN-Stick** (Port `8899`) über hardwarenahe Frame-Zusammensetzung.
-  - **Modbus TCP Gateway / Waveshare RS485-zu-Ethernet** (Port `502`).
-- **Stabilität & Timing**:
-  - Pufferpausen von 80 ms (`INTER_BLOCK_DELAY`) zwischen Modbus-Registerblöcken gegen Paketverluste im Logger-Stick.
-  - `read_holding_registers_safe` mit Wiederholungsversuchen und 500 ms Reconnect-Puffer.
-  - Sauberes Socket-Closing (`socket.shutdown(socket.SHUT_RDWR)`) zur Vermeidung blockierter Ports.
-- **Plausibilitäts-Check**:
-  - Automatische Leistungsberechnung (`P = U × I`), falls Register 590 `0 W` meldet, aber Ladestrom fließt.
-- **Umfangreiche Telemetrie**:
-  - PV-Leistung (String 1 & 2, Gesamtleistung).
-  - Batterie: SoC (%), Spannung, Strom, Lade-/Entladeleistung, Temperatur.
-  - Hausverbrauch & Lastverteilung je Phase (L1, L2, L3).
-  - Netzeinspeisung / Netzbezug & Netzfrequenz.
-  - Tageserträge (PV, Grid Buy/Sell, Battery Charge/Discharge).
-  - Integrierter lokaler Webserver mit ansprechendem HTML5-Live-Dashboard.
+### 📦 2. Enthaltene Python-Laufzeit & Pakete
+
+Die IDE liefert eine vorkonfigurierte Python 3.10 Umgebung mit folgenden Bibliotheken:
+- **`numpy`**: Vektor- und Matrixberechnungen, lineare Algebra.
+- **`matplotlib`**: 2D/3D-Plots (wird automatisch als Bild im Visual View Tab dargestellt).
+- **Python Standard Library**: `socket`, `threading`, `http.server`, `json`, `math`, `struct`, `urllib`, etc.
+- **`pysolarmanv5`**: Vorkonfiguriertes Paket für Modbus/Solarman-Kommunikation.
 
 ---
 
-### 📂 3. Workspace & Dateimanager
-- Dateiverwaltung über das Slide-Out-Menü (Drawer):
-  - Erstellen (`.py`, `.json`, `.html`, `.txt`).
-  - Umbenennen, Speichern und Löschen.
-  - Vorinstallierte Beispielskripte für den Schnellstart.
+### 📂 3. Workspace- & Dateimanager
+- Slide-Out Drawer zur Verwaltung eigener Python-Skripte im App-Workspace:
+  - Neue Dateien anlegen (`.py`, `.json`, `.html`, `.txt`).
+  - Dateien umbenennen, speichern und löschen.
+  - Automatische Sicherung und Wiederherstellung des Arbeitsbereichs.
 
 ---
 
-## 📦 Vorinstallierte Python-Pakete & Beispiele
+## 💡 Enthaltene Beispielskripte & Showcase
 
-Die App integriert folgende Python-Pakete direkt über Chaquopy:
-- **`numpy`**: Numerische Berechnungen und Matrix-Operationen.
-- **`matplotlib`**: Automatische Konvertierung von Plots in Base64 zur direkten Visualisierung.
-- **`pysolarmanv5`**: Referenzbibliothek für Solarman V5 Datenlogger.
-- **Standardbibliothek**: `socket`, `struct`, `http.server`, `threading`, `json`, `math`, etc.
+Die IDE enthält verschiedene Beispielskripte, die das breite Einsatzspektrum demonstrieren:
 
-### Enthaltene Beispielskripte:
-1. `deye_12k_inverter.py` – Deye Hybrid-Wechselrichter Modbus Reader & Web-Dashboard.
-2. `1_matplotlib_waves.py` – Generierung und Anzeige wissenschaftlicher Plots.
-3. `2_numpy_matrix.py` – Matrixberechnungen und Eigenwert-Analysen.
-4. `3_interactive_html_dashboard.py` – Generierung von interaktiven HTML/SVG-Dashboards.
+1. **`1_matplotlib_waves.py`** – Wissenschaftliche Visualisierung
+   - Berechnet Sinus-/Kosinuswellen mit NumPy und stellt sie mit Matplotlib dar.
+   - Der Plot erscheint direkt im **Web / Visual View Tab**.
+
+2. **`2_numpy_matrix.py`** – Numerische Mathematik
+   - Matrix-Multiplikation, Determinanten- und Eigenwertberechnungen auf der CPU des Smartphones.
+
+3. **`3_interactive_html_dashboard.py`** – Web-Generierung
+   - Erzeugt ein interaktives HTML5/SVG-Dashboard, das direkt im WebView gerendert wird.
+
+4. **`deye_12k_inverter.py`** – IoT & Hardware-Kommunikation (Real-World Showcase)
+   - Beispiel für hardwarenahe Netzwerkkommunikation via reine Python-Sockets.
+   - Fragt einen Deye Hybrid-Wechselrichter per Modbus TCP (Port 502) oder Solarman V5 WLAN-Stick (Port 8899) im Heimnetzwerk ab.
+   - Startet einen lokalen HTTP-Server im Hintergrund-Thread und streamt Telemetriedaten live in den **Web / Visual View Tab**.
 
 ---
 
 ## 🚀 Installation & Bauen
 
 ### Voraussetzungen
-- **Android Studio** (Koala / Ladybug oder neuer empfohlen)
+- **Android Studio** (Koala / Ladybug oder neuer)
 - **JDK 17**
-- **Android SDK** mit Minimum SDK 24 (Android 7.0+) und Target SDK 36
+- **Android SDK** (Min SDK: 24, Target SDK: 36)
 
-### Aus dem Quellcode kompilieren
+### Kompilieren
 1. Repository klonen:
    ```bash
-   git clone https://github.com/your-username/python-ide-deye-android.git
-   cd python-ide-deye-android
+   git clone https://github.com/your-username/python-ide-android.git
+   cd python-ide-android
    ```
-2. Projekt in Android Studio öffnen oder per Gradle kompilieren:
+2. Projekt über Gradle bauen:
    ```bash
    gradle assembleDebug
    ```
-3. Die fertige APK auf dem Android-Gerät installieren:
+3. APK auf dem Smartphone / Emulator installieren:
    ```bash
    adb install -r app/build/outputs/apk/debug/app-debug.apk
    ```
 
 ---
 
-## ⚙️ Deye Konfiguration anpassen
+## 🛠️ Technische Architektur
 
-Öffne in der App die Datei `deye_12k_inverter.py` im **Editor-Tab** und passe die Kopfzeilen an deine Anlage an:
-
-```python
-# ==============================================================================
-# ⚙️ DEYE WECHSELRICHTER & LOGGER KONFIGURATION
-# ==============================================================================
-INVERTER_IP = "192.168.188.128"   # IP-Adresse des Deye Inverters / WLAN-Sticks
-INVERTER_PORT = 8899              # 8899 (Solarman V5 WLAN Stick) oder 502 (Modbus TCP RS485)
-LOGGER_SERIAL = 1109501211        # ⚠️ 10-stellige Seriennummer vom Aufkleber des WLAN-Sticks
-SLAVE_ID = 1                      # Modbus Slave ID (Standard: 1)
-POLL_INTERVAL = 4                 # Abfrageintervall in Sekunden
-WEB_PORT = 8080                   # Port für das Web-Dashboard
-# ==============================================================================
-```
-
-- **Seriennummer**: Die 10-stellige Seriennummer findest du direkt auf dem Barcode-Aufkleber des Deye WLAN-Sticks.
-- Nach dem Anpassen einfach auf **Speichern** und anschließend auf **Run ▶** tippen.
-- Im **Terminal-Tab** siehst du die Live-Logs.
-- Im **Web / Visual View Tab** erscheint das Live-Dashboard!
-
----
-
-## 🛠️ Technische Details
-
-| Komponente | Technologie |
-|---|---|
-| **Programmiersprache** | Kotlin 2.0+ & Python 3.10 |
-| **UI Framework** | Jetpack Compose mit Material Design 3 (M3) |
-| **Python Bridge** | Chaquopy 15.0+ |
-| **Concurrency** | Kotlin Coroutines & `StateFlow` |
-| **Netzwerk-Sicherheit** | `usesCleartextTraffic="true"` (für lokales Dashboard auf `localhost:8080`) |
-| **Berechtigungen** | `android.permission.INTERNET`, `android.permission.ACCESS_NETWORK_STATE` |
+| Schicht | Technologie | Beschreibung |
+|---|---|---|
+| **UI & Presentation** | Jetpack Compose | Material Design 3, reaktive Zustände via `StateFlow` |
+| **Interpreter Core** | Chaquopy (Python 3.10) | Nativer In-Process Python-Interpreter für Android |
+| **Output Interceptor** | Standard Streams Redirect | Leitet Python `sys.stdout` & `sys.stderr` in Echtzeit an Compose weiter |
+| **Visual Bridge** | Base64 Image & WebView | Fängt Matplotlib-Figuren ab und stellt HTML/Webserver dar |
+| **Berechtigungen** | `INTERNET`, `ACCESS_NETWORK_STATE` | Erlaubt Netzwerk-Sockets (z. B. für IoT, APIs oder lokale Webserver) |
 
 ---
 
 ## 📄 Lizenz
 
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
+Dieses Projekt ist unter der [MIT-Lizenz](LICENSE) lizenziert.
