@@ -39,7 +39,14 @@ Jede Hauptansicht verfügt über die volle Bildschirmhöhe und -breite:
 
 ---
 
-### 📦 2. Enthaltene Python-Laufzeit & Pakete
+### 📊 2. WebView- & Visual-Output-Abfangen
+- **Ausgabe-Erkennung**: Wenn ein Skript HTML generiert oder Matplotlib-Plots erzeugt, wird dies automatisch abgefangen und bereitgestellt.
+- **Matplotlib-Hook**: Automatische Konvertierung von `plt.show()` in Base64/PNG oder HTML zur direkten Darstellung ohne Desktop-Fenstermanager.
+- **Integrierte Android WebView-Komponente**: Um HTML-Inhalte, Grafiken oder Web-Visualisierungen interaktiv darzustellen (unterstützt auch lokale HTTP-Server wie `localhost:8080`).
+
+---
+
+### 📦 3. Enthaltene Python-Laufzeit & Pakete
 
 Die IDE liefert eine vorkonfigurierte Python 3.10 Umgebung mit folgenden Bibliotheken:
 - **`numpy`**: Vektor- und Matrixberechnungen, lineare Algebra.
@@ -49,7 +56,7 @@ Die IDE liefert eine vorkonfigurierte Python 3.10 Umgebung mit folgenden Bibliot
 
 ---
 
-### 📂 3. Workspace- & Dateimanager
+### 📂 4. Workspace- & Dateimanager
 - Slide-Out Drawer zur Verwaltung eigener Python-Skripte im App-Workspace:
   - Neue Dateien anlegen (`.py`, `.json`, `.html`, `.txt`).
   - Dateien umbenennen, speichern und löschen.
