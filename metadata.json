@@ -1,0 +1,6 @@
+{
+  "name": "Python IDE & Runner",
+  "description": "Native Python IDE and script runner powered by Chaquopy with interactive terminal, file manager, and visual WebView plot outputs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
