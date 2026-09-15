@@ -1,11 +1,33 @@
 # 🐍 Python IDE & Interpreter for Android
 
-[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com)
-[![Download APK](https://img.shields.io/badge/Download-APK%20v1.0-brightgreen.svg)](apk/Python-IDE-1.0.apk)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-purple.svg)](https://kotlinlang.org)
-[![Compose](https://img.shields.io/badge/Jetpack-Compose%20M3-blue.svg)](https://developer.android.com/jetpack/compose)
-[![Python](https://img.shields.io/badge/Python-3.10%20(Chaquopy)-yellow.svg)](https://chaquo.com/chaquopy/)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/juergen874/Python-IDE-Runner/releases/latest">
+    <img src="https://img.shields.io/github/v/release/juergen874/Python-IDE-Runner?color=success&label=Official%20Release&logo=github&style=for-the-badge" alt="Latest Release">
+  </a>
+  <a href="https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk">
+    <img src="https://img.shields.io/badge/Download_APK-v1.0_(81_MB)-blue?logo=android&logoColor=white&style=for-the-badge" alt="Download APK">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android_7.0%2B-green.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Arch-arm64--v8a%20%7C%20x86__64-orange.svg" alt="Arch">
+  <img src="https://img.shields.io/badge/Kotlin-2.0%2B-purple.svg" alt="Kotlin">
+  <img src="https://img.shields.io/badge/Compose-Material_3-blue.svg" alt="Compose">
+  <img src="https://img.shields.io/badge/Python-3.10_(Chaquopy)-yellow.svg" alt="Python">
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License">
+</p>
+
+---
+
+> [!TIP]
+> ### ⚡ Schnelleinstieg & APK-Download
+> Du musst die App **nicht selbst kompilieren**. Die installierbare Android-Version steht als Release bereit:
+>
+> 📥 **[Direkter APK-Download: Python-IDE-1.0.apk](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk)** *(ca. 81 MB, v1.0)*  
+> 🏷️ **[Alle Versionen & Changelogs: GitHub Releases](https://github.com/juergen874/Python-IDE-Runner/releases)**
+
+---
 
 Eine vollwertige, native **Android Python-Entwicklungsumgebung (IDE) und Python-Interpreter**. 
 
@@ -13,18 +35,20 @@ Mit der integrierten **Chaquopy Python 3.10 Engine** führt die App Python-Code 
 
 ---
 
-## 📥 Download & Installation (APK)
+## 🚀 Releases & Downloads
 
-Die fertige Android-App kann sofort als APK heruntergeladen und auf dem Android-Gerät installiert werden:
+| Release | Dateiname | Zielsysteme | Download-Link | Hinweise |
+| :--- | :--- | :--- | :--- | :--- |
+| **v1.0 (Neueste)** | `Python-IDE-1.0.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [👉 **APK herunterladen**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk) | Enthält NumPy, Matplotlib, Deye-Modbus & Offline-Runtime |
+| **Repo Mirror** | `Python-IDE-1.0.apk` | Universell | [📦 Aus Repository laden](apk/Python-IDE-1.0.apk) | Lokales Git-Asset im `apk/`-Verzeichnis |
 
-- 📦 **Direkter Download im Repository**: [**`apk/Python-IDE-1.0.apk`**](apk/Python-IDE-1.0.apk) (Version 1.0, ~81 MB)
-- 🚀 **GitHub Releases**: [**Releases v1.0**](https://github.com/juergen874/Python-IDE-Runner/releases)
-
-### 📲 Schritt-für-Schritt-Installation:
-1. Lade die APK-Datei ([`Python-IDE-1.0.apk`](apk/Python-IDE-1.0.apk)) auf dein Android-Gerät herunter.
-2. Öffne die heruntergeladene Datei über die Benachrichtigungsleiste oder deinen Dateimanager.
-3. Falls gefragt: **"Installation aus unbekannten Quellen"** für den Browser bzw. Dateimanager in den Android-Einstellungen erlauben.
-4. Auf **Installieren** tippen und die App öffnen.
+### 📲 Schritt-für-Schritt-Installation auf Android:
+1. Lade die APK über den Link oben herunter: [**`Python-IDE-1.0.apk`**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk).
+2. Öffne die heruntergeladene Datei (über die Statusleiste oder deinen Dateimanager wie z. B. *Files* oder *Downloads*).
+3. Falls Android eine Sicherheitsabfrage anzeigt:
+   - Tippe auf **Einstellungen** und aktiviere den Schalter **„Installation aus dieser Quelle zulassen“** (für deinen Browser oder Dateimanager).
+4. Bestätige die Installation mit **Installieren**.
+5. Starte die App **Python IDE** direkt aus deiner App-Übersicht.
 
 ---
 
