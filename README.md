@@ -31,7 +31,20 @@
 
 Eine vollwertige, native **Android Python-Entwicklungsumgebung (IDE) und Python-Interpreter**. 
 
-Mit der integrierten **Chaquopy Python 3.10 Engine** führt die App Python-Code nativ und offline direkt auf dem Android-Gerät aus – ganz ohne Cloud-Abhängigkeiten oder Server. Unterstützt werden numerische Berechnungen mit **NumPy**, Datenvisualisierung mit **Matplotlib**, Multithreading, Socket-Netzwerkkommunikation, IoT-Anwendungen (z. B. Solarman/Modbus für Photovoltaik-Wechselrichter) sowie interaktive WebViews.
+Mit der integrierten **Chaquopy Python 3.10 Engine** führt die App Python-Code nativ und offline direkt auf dem Android-Gerät aus – ganz ohne Cloud-Abhängigkeiten oder Server. Unterstützt werden numerische Berechnungen mit **NumPy**, Datenvisualisierung mit **Matplotlib**, Multithreading, Socket-Netzwerkkommunikation, IoT-Anwendungen sowie interaktive WebViews.
+
+---
+
+## 🌟 Warum diese IDE? (Vorteile)
+
+- 🚀 **Echtes „Zero Setup“**: Kein Linux-Terminal, kein fehleranfälliges `pip install` und keine Build-Probleme auf dem Smartphone. C- und Mathe-Bibliotheken (wie NumPy und Matplotlib) sind bereits vorkompiliert, getestet und sofort startklar.
+- 📱 **Touch-optimierte Entwicklung**: Große Schaltflächen (**Run ▶**, **Stop ⏹**, **Save 💾**), Schnellzugriff auf oft benötigte Programmiersymbole (`Tab`, `:`, `()`, `[]`, `def`, `class`) und ein seitlicher Datei-Explorer machen das Coden auf dem Smartphone komfortabel.
+- 🖥️ **Clevere 3-Tab-Architektur**: Klare Aufteilung in Vollbild-Editor, ANSI-Streaming-Terminal und visuelle Web-/Plot-Ausgabe – alles lässt sich mit einer Wischgeste oder einem Fingertipp erreichen.
+- 📊 **Nahtlose Visualisierung ohne Desktop**: Ruft dein Skript `plt.show()` auf, fängt die IDE das automatisch ab und rendert Grafiken hochauflösend. Lokale HTML/JS-Dashboards und HTTP-Server werden direkt im integrierten WebView interaktiv dargestellt.
+- 🛑 **Zuverlässiger Notaus-Schalter (Stop)**: Endlosschleifen oder blockierende Netzwerk-Sockets können per Knopfdruck sauber via `KeyboardInterrupt` abgebrochen werden – ohne dass Android einfriert („App reagiert nicht“).
+- 📶 **Voller Zugriff auf das lokale Heimnetzwerk**: Im Gegensatz zu Cloud-Notebooks hat das Smartphone im WLAN direkten Socket-Zugriff auf lokale IP-Adressen (z. B. Smart-Home-Geräte, Mikrocontroller, Sensoren oder Router).
+- 🔒 **100 % Offline & Privatsphäre**: Läuft komplett autark auf dem Gerät – keine Cloud, keine Serverkosten, kein Datenabfluss und keine Abhängigkeit von einer Internetverbindung.
+- 🛠️ **Maximale Flexibilität**: Anpassungen, neue Berechnungen oder zusätzliche Schnittstellen können direkt auf dem Gerät im Code geändert und sekundenschnell getestet werden – ohne eine ganze Android-App neu kompilieren zu müssen.
 
 ---
 
@@ -39,7 +52,7 @@ Mit der integrierten **Chaquopy Python 3.10 Engine** führt die App Python-Code 
 
 | Release | Dateiname | Zielsysteme | Download-Link | Hinweise |
 | :--- | :--- | :--- | :--- | :--- |
-| **v1.0 (Neueste)** | `Python-IDE-1.0.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [👉 **APK herunterladen**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk) | Enthält NumPy, Matplotlib, Deye-Modbus & Offline-Runtime |
+| **v1.0 (Neueste)** | `Python-IDE-1.0.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [👉 **APK herunterladen**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk) | Enthält NumPy, Matplotlib, IoT/Modbus-Support & Offline-Runtime |
 | **Repo Mirror** | `Python-IDE-1.0.apk` | Universell | [📦 Aus Repository laden](apk/Python-IDE-1.0.apk) | Lokales Git-Asset im `apk/`-Verzeichnis |
 
 ### 📲 Schritt-für-Schritt-Installation auf Android:
@@ -97,7 +110,7 @@ Die IDE liefert eine vollständige, vorkonfigurierte Python 3.10 Umgebung mit fo
 | **`numpy`** | 1.26.2 | Schnelle Vektor- und Matrixberechnungen, lineare Algebra |
 | **`matplotlib`** | 3.6.0 | 2D/3D-Plots (wird automatisch im Visual View gerendert) |
 | **`pillow`** | 11.0.0 | Bildverarbeitung und Bildmanipulation |
-| **`pysolarmanv5`** | 3.0.6 | Modbus RTU/TCP-Kommunikation mit Solarman / Deye Wechselrichtern |
+| **`pysolarmanv5`** | 3.0.6 | Modbus RTU/TCP-Kommunikation für Hardware- und IoT-Geräte |
 | **`uModbus`** | 1.0.4 | Modbus-Protokoll-Implementierung |
 | **`pyserial`** | 3.5 | Serielle Kommunikation |
 | **Python Standard Library** | 3.10 | `socket`, `threading`, `http.server`, `json`, `math`, `struct`, `urllib`, `ctypes`, etc. |
@@ -128,7 +141,7 @@ Die IDE enthält verschiedene Beispielskripte, die das breite Einsatzspektrum de
 
 4. **`deye_12k_inverter.py`** – IoT & Photovoltaik (Real-World Showcase)
    - Beispiel für hardwarenahe Netzwerkkommunikation via reine Python-Sockets.
-   - Fragt einen Deye Hybrid-Wechselrichter per Modbus TCP (Port 502) oder Solarman V5 WLAN-Stick (Port 8899) im Heimnetzwerk ab.
+   - Fragt einen Hybrid-Wechselrichter per Modbus TCP (Port 502) oder WLAN-Stick (Port 8899) im Heimnetzwerk ab.
    - Startet einen lokalen HTTP-Server im Hintergrund-Thread und streamt Telemetriedaten live in den **Web / Visual View Tab**.
 
 ---
