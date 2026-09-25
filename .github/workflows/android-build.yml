@@ -22,6 +22,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Set up Python 3.10 (Required by Chaquopy)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
