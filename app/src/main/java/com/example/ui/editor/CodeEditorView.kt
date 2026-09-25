@@ -81,6 +81,11 @@ fun CodeEditorView(
             "if" to "if ",
             "else" to "else:\n    ",
             "for" to "for i in range():",
+            "while" to "while ",
+            "try" to "try:\n    \nexcept Exception as e:\n    print(e)",
+            "with" to "with open(\"\", \"r\") as f:\n    ",
+            "self." to "self.",
+            "lambda" to "lambda ",
             "#" to "# "
         )
     }

@@ -4,8 +4,11 @@
   <a href="https://github.com/juergen874/Python-IDE-Runner/releases/latest">
     <img src="https://img.shields.io/github/v/release/juergen874/Python-IDE-Runner?color=success&label=Official%20Release&logo=github&style=for-the-badge" alt="Latest Release">
   </a>
-  <a href="https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk">
-    <img src="https://img.shields.io/badge/Download_APK-v1.0_(81_MB)-blue?logo=android&logoColor=white&style=for-the-badge" alt="Download APK">
+  <a href="https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk">
+    <img src="https://img.shields.io/badge/Download_APK-v1.1_(81_MB)-blue?logo=android&logoColor=white&style=for-the-badge" alt="Download APK">
+  </a>
+  <a href="https://buymeacoffee.com/juergen874">
+    <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-yellow.svg?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee">
   </a>
 </p>
 
@@ -24,7 +27,7 @@
 > ### ⚡ Schnelleinstieg & APK-Download
 > Du musst die App **nicht selbst kompilieren**. Die installierbare Android-Version steht als Release bereit:
 >
-> 📥 **[Direkter APK-Download: Python-IDE-1.0.apk](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk)** *(ca. 81 MB, v1.0)*  
+> 📥 **[Direkter APK-Download: Python-IDE-1.1.apk](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk)** *(ca. 81 MB, v1.1)*  
 > 🏷️ **[Alle Versionen & Changelogs: GitHub Releases](https://github.com/juergen874/Python-IDE-Runner/releases)**
 
 ---
@@ -38,7 +41,7 @@ Mit der integrierten **Chaquopy Python 3.10 Engine** führt die App Python-Code 
 ## 🌟 Warum diese IDE? (Vorteile)
 
 - 🚀 **Echtes „Zero Setup“**: Kein Linux-Terminal, kein fehleranfälliges `pip install` und keine Build-Probleme auf dem Smartphone. C- und Mathe-Bibliotheken (wie NumPy und Matplotlib) sind bereits vorkompiliert, getestet und sofort startklar.
-- 📱 **Touch-optimierte Entwicklung**: Große Schaltflächen (**Run ▶**, **Stop ⏹**, **Save 💾**), Schnellzugriff auf oft benötigte Programmiersymbole (`Tab`, `:`, `()`, `[]`, `def`, `class`) und ein seitlicher Datei-Explorer machen das Coden auf dem Smartphone komfortabel.
+- 📱 **Touch-optimierte Entwicklung**: Große Schaltflächen (**Run ▶**, **Stop ⏹**, **Save 💾**), Schnellzugriff auf oft benötigte Programmiersymbole (`Tab`, `:`, `()`, `[]`, `def`, `class`, `try`, `while`, `with`) und ein seitlicher Datei-Explorer machen das Coden auf dem Smartphone komfortabel.
 - 🖥️ **Clevere 3-Tab-Architektur**: Klare Aufteilung in Vollbild-Editor, ANSI-Streaming-Terminal und visuelle Web-/Plot-Ausgabe – alles lässt sich mit einer Wischgeste oder einem Fingertipp erreichen.
 - 📊 **Nahtlose Visualisierung ohne Desktop**: Ruft dein Skript `plt.show()` auf, fängt die IDE das automatisch ab und rendert Grafiken hochauflösend. Lokale HTML/JS-Dashboards und HTTP-Server werden direkt im integrierten WebView interaktiv dargestellt.
 - 🛑 **Zuverlässiger Notaus-Schalter (Stop)**: Endlosschleifen oder blockierende Netzwerk-Sockets können per Knopfdruck sauber via `KeyboardInterrupt` abgebrochen werden – ohne dass Android einfriert („App reagiert nicht“).
@@ -52,11 +55,12 @@ Mit der integrierten **Chaquopy Python 3.10 Engine** führt die App Python-Code 
 
 | Release | Dateiname | Zielsysteme | Download-Link | Hinweise |
 | :--- | :--- | :--- | :--- | :--- |
-| **v1.0 (Neueste)** | `Python-IDE-1.0.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [👉 **APK herunterladen**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk) | Enthält NumPy, Matplotlib, IoT/Modbus-Support & Offline-Runtime |
-| **Repo Mirror** | `Python-IDE-1.0.apk` | Universell | [📦 Aus Repository laden](apk/Python-IDE-1.0.apk) | Lokales Git-Asset im `apk/`-Verzeichnis |
+| **v1.1 (Neueste)** | `Python-IDE-1.1.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [👉 **APK v1.1 herunterladen**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk) | Erweiterte Editor-Snippets (`try`, `while`, `with`, `self.`), Versions-Footer, CI-Builds |
+| **v1.0** | `Python-IDE-1.0.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [📦 **v1.0 herunterladen**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk) | Initial Release mit NumPy, Matplotlib & Modbus |
+| **Repo Mirror** | `Python-IDE-1.1.apk` | Universell | [📦 Aus Repository laden](apk/Python-IDE-1.1.apk) | Lokales Git-Asset im `apk/`-Verzeichnis |
 
 ### 📲 Schritt-für-Schritt-Installation auf Android:
-1. Lade die APK über den Link oben herunter: [**`Python-IDE-1.0.apk`**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk).
+1. Lade die APK über den Link oben herunter: [**`Python-IDE-1.1.apk`**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk).
 2. Öffne die heruntergeladene Datei (über die Statusleiste oder deinen Dateimanager wie z. B. *Files* oder *Downloads*).
 3. Falls Android eine Sicherheitsabfrage anzeigt:
    - Tippe auf **Einstellungen** und aktiviere den Schalter **„Installation aus dieser Quelle zulassen“** (für deinen Browser oder Dateimanager).

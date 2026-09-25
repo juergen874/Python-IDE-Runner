@@ -294,6 +294,32 @@ fun WorkspaceDrawer(
                     }
                 }
             }
+
+            HorizontalDivider(
+                color = IdeBorder,
+                thickness = 1.dp,
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+            )
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Python IDE v1.1",
+                    color = IdeTextSecondary,
+                    fontSize = 11.sp,
+                    fontFamily = FontFamily.Monospace
+                )
+                Text(
+                    text = "Chaquopy 3.10",
+                    color = IdeTextMuted,
+                    fontSize = 10.sp
+                )
+            }
         }
     }
 
