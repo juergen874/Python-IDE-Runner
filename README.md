@@ -7,9 +7,6 @@
   <a href="https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk">
     <img src="https://img.shields.io/badge/Download_APK-v1.1_(81_MB)-blue?logo=android&logoColor=white&style=for-the-badge" alt="Download APK">
   </a>
-  <a href="https://buymeacoffee.com/juergen874">
-    <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-yellow.svg?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee">
-  </a>
 </p>
 
 <p align="center">
