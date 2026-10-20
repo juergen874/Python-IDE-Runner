@@ -1,3 +1,131 @@
+<p align="center">
+  <b><a href="#-english">🇬🇧 English</a></b> &nbsp;•&nbsp; <b><a href="#-deutsch">🇩🇪 Deutsch</a></b>
+</p>
+
+---
+
+<a name="-english"></a>
+# 🐍 Python IDE & Interpreter for Android
+
+<p align="center">
+  <a href="https://github.com/juergen874/Python-IDE-Runner/releases/latest">
+    <img src="https://img.shields.io/github/v/release/juergen874/Python-IDE-Runner?color=success&label=Official%20Release&logo=github&style=for-the-badge" alt="Latest Release">
+  </a>
+  <a href="https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk">
+    <img src="https://img.shields.io/badge/Download_APK-v1.1_(81_MB)-blue?logo=android&logoColor=white&style=for-the-badge" alt="Download APK">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android_7.0%2B-green.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Arch-arm64--v8a%20%7C%20x86__64-orange.svg" alt="Arch">
+  <img src="https://img.shields.io/badge/Kotlin-2.0%2B-purple.svg" alt="Kotlin">
+  <img src="https://img.shields.io/badge/Compose-Material_3-blue.svg" alt="Compose">
+  <img src="https://img.shields.io/badge/Python-3.10_(Chaquopy)-yellow.svg" alt="Python">
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License">
+</p>
+
+---
+
+> [!TIP]
+> ### ⚡ Quick Start & APK Download
+> You do **not need to compile the app yourself**. Ready-to-install Android packages are available in Releases:
+>
+> 📥 **[Direct APK Download: Python-IDE-1.1.apk](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk)** *(~81 MB, v1.1)*  
+> 🏷️ **[All Versions & Changelogs: GitHub Releases](https://github.com/juergen874/Python-IDE-Runner/releases)**
+
+---
+
+A full-featured native **Android Python Integrated Development Environment (IDE) and Python Interpreter**.
+
+Powered by the integrated **Chaquopy Python 3.10 Engine**, the app executes Python code natively and completely offline on your Android device – with zero cloud dependencies or external servers. Out of the box, it supports numerical computing with **NumPy**, data visualization with **Matplotlib**, multithreading, socket network communication, IoT applications, and interactive WebViews.
+
+---
+
+## 🌟 Why this IDE? (Key Benefits)
+
+- 🚀 **True "Zero Setup"**: No Linux terminal, no flaky `pip install` errors, and no compilation headaches on your phone. C and math libraries (such as NumPy and Matplotlib) come precompiled, tested, and ready to run immediately.
+- 📱 **Touch-Optimized Development**: Large action buttons (**Run ▶**, **Stop ⏹**, **Save 💾**), quick-access bar for programming symbols (`Tab`, `:`, `()`, `[]`, `def`, `class`, `try`, `while`, `with`), and an integrated slide-out file explorer make mobile coding comfortable.
+- 🖥️ **Smart 3-Tab Architecture**: Dedicated fullscreen views for Code Editor, ANSI Streaming Terminal, and Visual Web/Plot Output – all accessible with a single swipe or tab tap.
+- 📊 **Seamless Visualization Without Desktop**: When your script calls `plt.show()`, the IDE intercepts the call and renders the plot in high resolution. Local HTML/JS dashboards and HTTP servers are rendered interactively in the embedded WebView.
+- 🛑 **Reliable Emergency Stop**: Infinite loops or blocking network sockets can be cleanly interrupted with a tap via `KeyboardInterrupt` without freezing Android ("ANR - App Not Responding").
+- 📶 **Direct Local Network Access**: Unlike cloud notebooks, your phone on Wi-Fi has direct socket access to local LAN IP addresses (e.g., smart home devices, microcontrollers, Modbus inverters, or routers).
+- 🔒 **100% Offline & Private**: Runs fully self-contained on the device – no telemetry, no cloud costs, no data leaks, and zero dependence on an active internet connection.
+- 🛠️ **Maximum Flexibility**: Tweak calculations, test algorithms, or write new scripts on the go in seconds – without ever rebuilding an entire Android app.
+
+---
+
+## 🚀 Releases & Downloads
+
+| Release | File | Target OS | Download Link | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **v1.1 (Latest)** | `Python-IDE-1.1.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [👉 **Download APK v1.1**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk) | Added editor snippets (`try`, `while`, `with`, `self.`), version footer, CI automation |
+| **v1.0** | `Python-IDE-1.0.apk` | Android 7.0+ (`arm64-v8a`, `x86_64`) | [📦 **Download v1.0**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.0/Python-IDE-1.0.apk) | Initial release with NumPy, Matplotlib & Modbus |
+| **Repo Mirror** | `Python-IDE-1.1.apk` | Universal | [📦 Mirror in repository](apk/Python-IDE-1.1.apk) | Local Git asset in `apk/` directory |
+
+### 📲 Installation on Android:
+1. Download the APK: [**`Python-IDE-1.1.apk`**](https://github.com/juergen874/Python-IDE-Runner/releases/download/v1.1/Python-IDE-1.1.apk).
+2. Open the downloaded file from your notification shade or Files/Downloads app.
+3. If Android prompts a security dialog, enable **"Allow from this source"** for your browser or file manager.
+4. Tap **Install** and launch **Python IDE** from your app drawer.
+
+---
+
+## ✨ Features & Capabilities
+
+### 🖥️ 1. Fullscreen Three-Tab Interface
+Optimizes screen space for mobile productivity:
+- **📝 Tab 1: Editor**
+  - Line numbers, dynamic syntax highlighting (`PythonSyntaxHighlighter`), and quick-access toolbar.
+  - `Tab` key for standard 4-space indentation and one-tap Python tokens (`def`, `class`, `import`, `print`, `:`, `()`, `[]`, `{}`).
+  - Unsaved changes indicator (`●`), font size scaling.
+- **💻 Tab 2: Terminal**
+  - Live unbuffered streaming of `stdout` and `stderr`.
+  - ANSI color rendering (`AnsiParser`), execution timer in milliseconds (`elapsedMs`), autoscroll toggle, copy and clear.
+  - Emergency **Stop** button executing `KeyboardInterrupt`. Auto-switches to terminal on **Run ▶**.
+- **🌐 Tab 3: Web / Visual View**
+  - Automatic rendering of Matplotlib 2D/3D figures without an X11/desktop server.
+  - Interactive WebView for generated HTML/SVG dashboards or embedded web servers (`http://localhost:8080`).
+
+---
+
+### 📦 2. Included Python Runtime & Libraries
+
+Full, preconfigured Python 3.10 environment including:
+| Library | Version | Purpose |
+|---|---|---|
+| **`numpy`** | 1.26.2 | Fast vector and matrix math, linear algebra |
+| **`matplotlib`** | 3.6.0 | 2D/3D plotting (rendered in Visual View) |
+| **`pillow`** | 11.0.0 | Image processing and manipulation |
+| **`pysolarmanv5`** | 3.0.6 | Modbus RTU/TCP telemetry for hardware/solar inverters |
+| **`uModbus`** | 1.0.4 | Modbus protocol implementation |
+| **`pyserial`** | 3.5 | Serial communication |
+| **Standard Library** | 3.10 | `socket`, `threading`, `http.server`, `json`, `math`, `struct`, `urllib`, `ctypes`, etc. |
+
+---
+
+## 🛠️ Technical Architecture
+
+| Layer | Technology | Role |
+|---|---|---|
+| **UI & Presentation** | Jetpack Compose (Material 3) | Reactive UI with `StateFlow` in `MainViewModel` |
+| **Interpreter Core** | Chaquopy (Python 3.10) | Native in-process Python runtime for Android |
+| **Output Interceptor** | `runner_hook.py` | Streams `sys.stdout` & `sys.stderr` in real time to Compose |
+| **Visual Bridge** | Base64 Image & WebView | Intercepts Matplotlib figures & renders local web servers |
+| **Permissions** | `INTERNET`, `ACCESS_NETWORK_STATE` | Allows network sockets (IoT, APIs, embedded servers) |
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE).
+
+---
+---
+
+<a name="-deutsch"></a>
+# 🇩🇪 Deutsche Beschreibung
+
 # 🐍 Python IDE & Interpreter for Android
 
 <p align="center">
